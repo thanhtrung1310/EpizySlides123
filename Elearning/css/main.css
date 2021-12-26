@@ -5672,18 +5672,50 @@ main {
 }
 
 #backtop {
+    display: inline-block;
+    background-color: #ff6360;
     width: 50px;
     height: 50px;
-    background: #ff6360;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     border-radius: 50%;
     position: fixed;
     bottom: 20px;
     right: 20px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
 }
 
+#backtop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
 
-/*# sourceMappingURL=main.map.map*/
+#backtop:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+#backtop:active {
+    background-color: #555;
+}
+
+#backtop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (min-width: 500px) {
+    .content {
+        width: 43%;
+    }
+    #backtop {
+        margin: 10px;
+    }
+}

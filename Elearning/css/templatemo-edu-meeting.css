@@ -71,10 +71,14 @@
     }
 }
 
+#main-collapse {
+    padding: 0;
+}
+
 .services {
     margin-top: 45px;
     position: absolute;
-    margin-left: 3.5%;
+    margin-left: 5.5%;
 }
 
 .services .item {
